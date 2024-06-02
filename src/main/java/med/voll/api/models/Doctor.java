@@ -6,8 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.records.doctor.DoctorsData;
-import med.voll.api.records.doctor.Speciality;
+import med.voll.api.dto.doctor.DoctorsData;
+import med.voll.api.dto.doctor.Speciality;
 
 @Table(name = "doctors")
 @Entity(name = "doctor")

@@ -1,8 +1,7 @@
-package med.voll.api.records;
+package med.voll.api.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Null;
 
 public record AddressData(
         @NotBlank

@@ -1,9 +1,8 @@
 package med.voll.api.controllers;
 
-import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.models.Patient;
-import med.voll.api.records.patient.PatientData;
+import med.voll.api.dto.patient.PatientData;
 import med.voll.api.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +19,6 @@ public class PatientController
         private PatientRepository patientRepository;
 
         @PostMapping
-        @Transactional
         public void registrar(@RequestBody @Valid PatientData patientData) {
             patientRepository.save(new Patient(patientData));
         }

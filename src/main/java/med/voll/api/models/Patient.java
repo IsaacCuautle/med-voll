@@ -5,34 +5,34 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.records.patient.PatientData;
+import med.voll.api.dto.patient.PatientData;
 
 @Getter
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "Paciente")
-@Table(name = "pacientes")
+@Entity(name = "Patient")
+@Table(name = "patients")
 public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    private String name;
     private String email;
-    private String documentoIdentidad;
-    private String telefono;
+    private String document;
+    private String phone;
 
     @Embedded
     private Address address;
 
     public Patient(PatientData patientData) {
-        this.nombre = patientData.name();
+        this.name = patientData.name();
         this.email = patientData.email();
-        this.telefono = patientData.phone();
-        this.documentoIdentidad = patientData.document();
-        this.address = new Address(patientData.addressData());
+        this.phone = patientData.phone();
+        this.document = patientData.document();
+        this.address = new Address(patientData.address());
     }
 
 }

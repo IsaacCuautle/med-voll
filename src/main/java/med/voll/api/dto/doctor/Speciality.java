@@ -1,4 +1,4 @@
-package med.voll.api.records.doctor;
+package med.voll.api.dto.doctor;
 
 public enum Speciality {
     ORTHOPEDICS,
