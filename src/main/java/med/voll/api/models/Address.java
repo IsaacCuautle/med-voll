@@ -4,6 +4,7 @@ import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.records.AddressData;
 
 @Embeddable
 
@@ -17,4 +18,12 @@ public class Address
     private String complement;
     private String district;
     private String city;
+
+    public Address(AddressData address) {
+        this.street = address.street();
+        this.number = address.number();
+        this.complement = address.complement();
+        this.district = address.district();
+        this.city = address.city();
+    }
 }

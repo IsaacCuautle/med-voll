@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.records.doctor.DoctorsData;
 import med.voll.api.records.doctor.Speciality;
 
 @Table(name = "doctors")
@@ -23,6 +24,7 @@ public class Doctor
 
     private String name;
     private String email;
+    private String phone;
     private String document;
 
     @Enumerated(EnumType.STRING)
@@ -30,4 +32,14 @@ public class Doctor
 
     @Embedded
     private Address address;
+
+    public Doctor(DoctorsData doctorsData)
+    {
+        this.name = doctorsData.name();
+        this.email = doctorsData.email();
+        this.phone = doctorsData.phone();
+        this.document = doctorsData.document();
+        this.speciality = doctorsData.speciality();
+        this.address =  new Address(doctorsData.address());
+    }
 }
