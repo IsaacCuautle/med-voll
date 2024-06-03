@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.dto.PatientDataUpdate;
 import med.voll.api.dto.patient.PatientData;
 
 @Getter
@@ -26,13 +27,30 @@ public class Patient {
 
     @Embedded
     private Address address;
+    private Boolean active;
 
     public Patient(PatientData patientData) {
+        this.active = true;
         this.name = patientData.name();
         this.email = patientData.email();
         this.phone = patientData.phone();
         this.document = patientData.document();
         this.address = new Address(patientData.address());
+    }
+
+    public void updatePatient(PatientDataUpdate patientDataUpdate) {
+        if (patientDataUpdate.name() != null)
+            this.name = patientDataUpdate.name();
+
+        if (patientDataUpdate.phone() != null)
+            this.phone = patientDataUpdate.phone();
+
+        if (patientDataUpdate.address() != null)
+            address.updateAdress(patientDataUpdate.address());
+    }
+
+    public void disablePatient() {
+        this.active = false;
     }
 
 }
