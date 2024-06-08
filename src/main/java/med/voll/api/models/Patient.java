@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.dto.PatientDataUpdate;
+import med.voll.api.dto.patient.PatientDataUpdate;
 import med.voll.api.dto.patient.PatientData;
 
 @Getter

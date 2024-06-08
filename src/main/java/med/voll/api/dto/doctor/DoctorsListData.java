@@ -1,4 +1,4 @@
-package med.voll.api.dto;
+package med.voll.api.dto.doctor;
 
 import med.voll.api.models.Doctor;
 

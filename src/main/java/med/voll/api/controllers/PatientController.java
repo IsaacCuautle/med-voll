@@ -2,9 +2,8 @@ package med.voll.api.controllers;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.voll.api.dto.DoctorsListData;
-import med.voll.api.dto.PatientDataUpdate;
-import med.voll.api.dto.PatientListData;
+import med.voll.api.dto.patient.PatientDataUpdate;
+import med.voll.api.dto.patient.PatientListData;
 import med.voll.api.models.Patient;
 import med.voll.api.dto.patient.PatientData;
 import med.voll.api.repositories.PatientRepository;

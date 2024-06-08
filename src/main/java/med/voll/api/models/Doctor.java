@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.dto.DoctorDataUpdate;
+import med.voll.api.dto.doctor.DoctorDataUpdate;
 import med.voll.api.dto.doctor.DoctorsData;
 import med.voll.api.dto.doctor.Speciality;
 
