@@ -29,7 +29,6 @@ public class AuthController
     @PostMapping
     public ResponseEntity userAuth(@Valid @RequestBody UserAuthData userAuthData)
     {
-
         Authentication authToken = new UsernamePasswordAuthenticationToken(userAuthData.login(), userAuthData.password());
         var  authUser = authenticationManager.authenticate(authToken);
         var jwt = tokenService.tokenGenerate((User) authUser.getPrincipal());
