@@ -31,6 +31,7 @@ public class PatientController
 
 
         @PostMapping
+        @Transactional
         public void registrar(@RequestBody @Valid PatientData patientData) {
             patientRepository.save(new Patient(patientData));
         }
