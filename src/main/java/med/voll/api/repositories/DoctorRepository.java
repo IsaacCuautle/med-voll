@@ -18,9 +18,9 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long>
     @Query("""
             SELECT d FROM Doctors d
             WHERE  d.active = 1  AND d.speciality=:speciality
-            AND  d.id = NOT IN(
+            AND  d.id NOT IN(
                 SELECT c.doctor_id FROM Consultations c
-                c.date=:date
+                WHERE c.date=:date
             )
             ORDER BY RAND()
             LIMIT 1
