@@ -41,14 +41,23 @@ public class ConsultationSchedulingService
 
         // Asigna los valores para un objeto consulta y lo guarda en la DB
         var patient = patientRepository.findById(data.patientId()).get();
-        var doctor = selectDoctor(data.doctorId());
+        var doctor = selectSimilarDoctor(data);
         var consultation = new Consultation(null, doctor, patient, data.date());
 
         consultationRepository.save(consultation);
     }
 
-    // Selecciona un medico disponible
-    private Doctor selectDoctor(Long aLong) {
-        return null;
+    // Selecciona un medico disponible con la misma especialidad
+    private Doctor selectSimilarDoctor(DataScheduleConsultation data) {
+        if (data.doctorId() != null)
+        {
+            return doctorRepository.getReferenceById(data.doctorId());
+        }
+        if(data.speciality() == null)
+        {
+            throw new IntegrityValidation("debe seleccionar una especialidad");
+        }
+
+        return doctorRepository.selectDoctorSimilarSpeciality(data.speciality(), data.date());
     }
 }
