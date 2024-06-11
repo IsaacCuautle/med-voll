@@ -4,5 +4,10 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-public record DataScheduleConsultation( Long id, @NotNull Long idPatient, Long idMedic, @NotNull LocalDateTime date) {
+public record DataScheduleConsultation( Long id,
+                                        @NotNull Long patientId,
+                                        Long doctorId,
+                                        @NotNull LocalDateTime date)
+{
+
 }

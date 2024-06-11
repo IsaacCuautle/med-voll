@@ -1,8 +1,11 @@
 package med.voll.api.controllers;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.dto.consultations.ConsultationDetails;
 import med.voll.api.dto.consultations.DataScheduleConsultation;
+import med.voll.api.services.consultation.ConsultationSchedulingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +19,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ConsultationController
 {
 
+    @Autowired
+    private ConsultationSchedulingService service;
 
     @PostMapping
-    public ResponseEntity schedule(@RequestBody @Valid DataScheduleConsultation dataScheduleConsultation)
+    @Transactional
+    public ResponseEntity schedulingConsultation(@RequestBody @Valid DataScheduleConsultation data)
     {
 
-        return ResponseEntity.ok(new ConsultationDetails(null,null,null, null));
+        service.scheduling(data);
+        return ResponseEntity.ok(new ConsultationDetails(null,data.patientId(),data.doctorId(), data.date()));
     }
 }

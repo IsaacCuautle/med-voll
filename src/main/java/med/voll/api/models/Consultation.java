@@ -27,4 +27,7 @@ public class Consultation {
     private Patient patient;
 
     private LocalDateTime date;
+
+    public Consultation(Object o, Doctor doctor, Patient patient, LocalDateTime date) {
+    }
 }
