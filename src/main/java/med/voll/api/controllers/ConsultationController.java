@@ -27,7 +27,7 @@ public class ConsultationController
     public ResponseEntity schedulingConsultation(@RequestBody @Valid DataScheduleConsultation data)
     {
 
-        service.scheduling(data);
-        return ResponseEntity.ok(new ConsultationDetails(null,data.patientId(),data.doctorId(), data.date()));
+        var response = service.scheduling(data);
+        return ResponseEntity.ok(response);
     }
 }

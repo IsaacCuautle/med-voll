@@ -1,19 +1,23 @@
 package med.voll.api.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 import java.time.LocalDateTime;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 
 @Table(name = "consultations")
 @Entity(name = "consultation")
-@Getter
-@NoArgsConstructor
-@EqualsAndHashCode(of = "id")
-
-public class Consultation {
+public class Consultation
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +32,5 @@ public class Consultation {
 
     private LocalDateTime date;
 
-    public Consultation(Object o, Doctor doctor, Patient patient, LocalDateTime date) {
-    }
+
 }
