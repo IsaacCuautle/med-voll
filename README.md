@@ -2,9 +2,9 @@
 voll-med-api es una API diseñada para simular las rutas de una aplicación de gestión clínica, permitiendo realizar todas las operaciones de un CRUD en entidades como médicos y pacientes, así como gestionar consultas médicas. Desarrollada con Spring y MySQL, garantiza un rendimiento robusto y alta escalabilidad. Además, utiliza JWT (JSON Web Tokens) para asegurar la autenticación y el acceso, proporcionando una capa adicional de seguridad. Con esta API, las clínicas pueden mejorar la gestión diaria de sus operaciones, optimizando la experiencia tanto del personal médico como de los pacientes.
 
 ## ¿Como utilizar el proyecto?
-Clonar o descargar el proyecto: Obtenga el proyecto desde el repositorio aquí.
-Configurar las variables de entorno: Ajuste las variables de entorno según sus necesidades.
-Iniciar el proyecto: Ejecute el proyecto utilizando su IDE de preferencia.
+1. Clonar o descargar el proyecto: Obtenga el proyecto desde el repositorio aquí.
+2. Configurar las variables de entorno: Ajuste las variables de entorno según sus necesidades.
+3. Iniciar el proyecto: Ejecute el proyecto utilizando su IDE de preferencia.
 
 > Recuerde que debe contar con MySQL, ya que las bases de datos se crearán automáticamente al arrancar el proyecto.
 
